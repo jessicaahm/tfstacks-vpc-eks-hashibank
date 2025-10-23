@@ -24,6 +24,7 @@ deployment "development" {
     #EKS OIDC
     tfc_kubernetes_audience = "k8s.workload.identity"
     tfc_hostname = "https://app.terraform.io"
+    tfc_organization_name = "jessica-org"
     eks_clusteradmin_arn = "arn:aws:iam::034362039150:role/aws_jessica.ang_test-developer"
     eks_clusteradmin_username = "aws_jessica.ang_test-developer"
 
