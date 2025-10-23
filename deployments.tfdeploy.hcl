@@ -8,6 +8,7 @@ identity_token "k8s" {
   audience = ["k8s.workload.identity"]
 }
 
+
 deployment "development" {
   inputs = {
     aws_identity_token = identity_token.aws.jwt
@@ -23,7 +24,6 @@ deployment "development" {
     #EKS OIDC
     tfc_kubernetes_audience = "k8s.workload.identity"
     tfc_hostname = "https://app.terraform.io"
-    tfc_organization_name = "hashi-demos-apj"
     eks_clusteradmin_arn = "arn:aws:iam::034362039150:role/aws_jessica.ang_test-developer"
     eks_clusteradmin_username = "aws_jessica.ang_test-developer"
 
