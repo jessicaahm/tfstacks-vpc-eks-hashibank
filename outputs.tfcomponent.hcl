@@ -9,3 +9,9 @@ output "cluster_certificate_authority_data" {
   type        = map(string)
   value       = { for k, v in component.eks : k => v.cluster_certificate_authority_data }
 }
+
+output "cluster_endpoint" {
+    description = "EKS cluster endpoint"
+    type        = map(string)
+    value       = { for k, v in component.eks : k => v.cluster_endpoint }
+}

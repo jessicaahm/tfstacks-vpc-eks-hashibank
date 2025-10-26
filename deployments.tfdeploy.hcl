@@ -12,6 +12,9 @@ publish_output "cluster_name" {
   value = deployment.development.cluster_name
 }
 
+publish_output "cluster_endpoint" {
+  value = deployment.development.cluster_endpoint
+}
 
 deployment "development" {
   inputs = {
