@@ -16,6 +16,10 @@ publish_output "cluster_endpoint" {
   value = deployment.development.cluster_endpoint
 }
 
+publish_output "cluster_certificate_authority_data" {
+  value = deployment.development.cluster_certificate_authority_data
+}
+
 deployment "development" {
   inputs = {
     aws_identity_token = identity_token.aws.jwt
