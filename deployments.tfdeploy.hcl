@@ -8,6 +8,10 @@ identity_token "k8s" {
   audience = ["k8s.workload.identity"]
 }
 
+publish_output "cluster_name" {
+  value = deployment.development.cluster_name
+}
+
 
 deployment "development" {
   inputs = {
@@ -34,6 +38,7 @@ deployment "development" {
 
   }
 }
+
 
 # deployment "prod" {
 #   inputs = {
