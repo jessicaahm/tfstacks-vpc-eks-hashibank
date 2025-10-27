@@ -20,31 +20,31 @@ publish_output "cluster_certificate_authority_data" {
   value = deployment.development.cluster_certificate_authority_data
 }
 
-deployment "development" {
-  inputs = {
-    aws_identity_token = identity_token.aws.jwt
-    role_arn            = "arn:aws:iam::034362039150:role/stacks-jessicaorg-ahm-hackathon"
-    regions             = ["us-east-1"]
-    vpc_name = "vpc-dev2"
-    vpc_cidr = "10.0.0.0/16"
+# deployment "development" {
+#   inputs = {
+#     aws_identity_token = identity_token.aws.jwt
+#     role_arn            = "arn:aws:iam::034362039150:role/stacks-jessicaorg-ahm-hackathon"
+#     regions             = ["us-east-1"]
+#     vpc_name = "vpc-dev2"
+#     vpc_cidr = "10.0.0.0/16"
 
-    #EKS Cluster
-    kubernetes_version = "1.30"
-    cluster_name = "eksdev02"
+#     #EKS Cluster
+#     kubernetes_version = "1.30"
+#     cluster_name = "eksdev02"
     
-    #EKS OIDC
-    tfc_kubernetes_audience = "k8s.workload.identity"
-    tfc_hostname = "https://app.terraform.io"
-    tfc_organization_name = "jessica-org"
-    eks_clusteradmin_arn = "arn:aws:iam::034362039150:role/aws_jessica.ang_test-developer"
-    eks_clusteradmin_username = "aws_jessica.ang_test-developer"
+#     #EKS OIDC
+#     tfc_kubernetes_audience = "k8s.workload.identity"
+#     tfc_hostname = "https://app.terraform.io"
+#     tfc_organization_name = "jessica-org"
+#     eks_clusteradmin_arn = "arn:aws:iam::034362039150:role/aws_jessica.ang_test-developer"
+#     eks_clusteradmin_username = "aws_jessica.ang_test-developer"
 
-    #K8S
-    k8s_identity_token = identity_token.k8s.jwt
-    namespace = "hashibank"
+#     #K8S
+#     k8s_identity_token = identity_token.k8s.jwt
+#     namespace = "hashibank"
 
-  }
-}
+#   }
+# }
 
 
 # deployment "prod" {
